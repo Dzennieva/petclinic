@@ -32,6 +32,11 @@ tools{
                 sh 'mvn package'
             }
         }
+	stage('OWASP Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '--scan target/', odcInstallation: 'owasp'
+            }
+        }
           stage('Deploy') {
             steps {
                 sh 'sudo cp target/*.war /opt/apache-tomcat-9.0.65/webapps/'
