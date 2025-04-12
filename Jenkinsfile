@@ -34,7 +34,7 @@ tools{
         }
 	stage('OWASP Dependency Check') {
             steps {
-                dependencyCheck additionalArguments: '--scan target/', odcInstallation: 'default'
+                dependencyCheck additionalArguments: '--scan target/', odcInstallation: 'owasp'
             }
         }
           stage('Deploy') {
