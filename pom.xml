@@ -81,7 +81,19 @@
         <docker.image.prefix>springcommunity</docker.image.prefix>
 
     </properties>
-
+<distributionManagement>
+  <repository>
+    <id>maven-releases</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://localhost:9090/repository/maven-releases/</url>
+  </repository>
+  <snapshotRepository>
+    <id>maven-snapshots</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://localhost:9090/repository/maven-snapshots/</url>
+  </snapshotRepository>
+</distributionManagement>
+         
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -551,6 +563,11 @@
             <name>Spring Milestone Repository</name>
             <url>https://repo.spring.io/milestone</url>
         </repository>
+         <repository>
+  <id>maven-releases</id>
+  <name>maven-releases</name>
+  <url>http://localhost:9090/repository/maven-releases/</url>
+</repository>
     </repositories>
 
 </project>
